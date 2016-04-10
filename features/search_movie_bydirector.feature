@@ -23,16 +23,16 @@ Scenario: Find Director for unknown movie (sad path)
 
 
 Scenario: Seaching for movie with same director
-  Given I am on detail page of "Star Wars"
+  Given I am on detail page of "THX-1138"
   When  I follow "Find Movies With Same Director"
-  Then  I should be on the Similar Movies page for "Star Wars"
-  And   I should see "THX-1138"
+  Then  I should be on the Similar Movies page for "THX-1138"
+  And   I should see "Star Wars"
   But   I should not see "Blade Runner"
   
   
 Scenario: Adding Director to existing movie with no previous director
   When I go to edit page of "Alien"
-  And  I fill in "Director" with "Ridley Scott"
+  And  I fill in "Director" with "Shujaat Ali"
   And  I press "Update Movie Info"
-  Then the director of "Alien" should be "Ridley Scott"
+  Then the director of "Alien" should be "Shujaat Ali"
 
